@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta type="author" name="newton karani">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidenav.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Step 1 - Include the fusioncharts core library -->
+    <script type="text/javascript" src="js/fusioncharts.js"></script>
+    <!-- Step 2 - Include the fusion theme -->
+    <script type="text/javascript" src="js/themes/fusioncharts.theme.fusion.js"></script>
+    <script type="text/javascript" src="js/themes/fusioncharts.theme.candy.js"></script>
+
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
+
+
+<title>Chartify | Column Chart</title>
+</head>
+<body style="margin-left: 20px; margin-right: 40px;">
+
+  
+<!--side menu-->
+<div class="page-wrapper chiller-theme toggled">
+    <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav id="sidebar" class="sidebar-wrapper">
+      <div class="sidebar-content">
+        <div class="sidebar-brand">
+          <a style="color: beige;" href="#">Select Chart Type</a>
+          <div id="close-sidebar">
+            <i class="fa fa-times"></i>
+          </div>
+        </div>
+        <!-- <div class="sidebar-search" style="background-color: beige;">
+          <div>
+            <div class="input-group" style="background-color: beige;">
+              <input type="text" class="form-control search-menu" placeholder="Search..." style="background-color: beige; border: 1px solid #23408f;">
+              <div class="input-group-append">
+                <span class="input-group-text">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div> -->
+  
+        <!-- sidebar-search  -->
+        <div class="sidebar-menu">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <a class="active-link"  href="index.html">
+                <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                <span>Column</span>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="pie.html">
+                <i class="fa fa-pie-chart"></i>
+                <span>Pie</span>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="doughnut.html">
+                <i class="fa fa-pie-chart"></i>
+                <span>Doughnut</span>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a  href="line.html">
+                <i class="fa fa-line-chart"></i>
+                <span>Line</span>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="area.html">
+                <i class="fa fa-area-chart"></i>
+                <span>Area</span>
+              </a>
+            </li>
+    
+            <li class="list-group-item">
+              <a href="bar.html">
+                <i class="fa fa-bar-chart"></i>
+                <span>Bar</span>
+              </a>
+            </li>
+
+            <li class="list-group-item">
+              <a href="bubble.html">
+                <i class="fa fa-spinner"></i>
+                <span>Bubble</span>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="candlestick.html">
+                <i class="fa fa-folder"></i>
+                <span>CandleStick</span>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="candlestick.html">
+                <i class="fa fa-folder"></i>
+                <span>SunBurst</span>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="combined.html">
+                <i class="fa fa-folder"></i>
+                <span>Combined</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- sidebar-menu  -->
+      </div>
+      <!-- sidebar-content  -->
+    </nav>
+    <!-- sidebar-wrapper  -->
+  
+  
+  
+  
+    <main class="page-content" style="padding-right: 10px;">
+      <div class="container-fluid">
+  
+<div class="card shadow options collapse" id="optionsCollapse" style="min-width: 200px;">
+    <div class="card-header">Account</div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Sign In / Sign Up</li>
+        <li class="list-group-item">My Tables</li>
+        <li class="list-group-item">Log Out</li>
+      </ul>
+</div>
+
+    
+<div class="container">
+    <nav class="navbar navbar-expand-md fixed-top d-flex justify-content-between flex-row">
+        <a href="#" class="navbar-brand logo">Chartify</a>  
+
+        <a href="index.html" class="navbar-brand active-link">Create Chart</a>  
+
+        <a href="table2charts.html" class="navbar-brand logo">Table 2 Charts</a>  
+        
+        <a data-toggle="collapse" role="button" href="#optionsCollapse"><img src="images/image9.jpeg" class="rounded-circle" alt="profile"></a>
+    </nav>
+</div>
+</div>
+
+<div class="card shadow">
+
+  <div class="d-flex justify-content-between flex-row">
+    <p style="color: #1A1A2E; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-weight: bold;">New Chart - Column Chart</p>
+    <form>
+      <div class="form-row">
+        <div class="col">
+          <small style="color: #1A1A2E; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Import Excel File</small>
+        </div>
+      </div>
+      <div class="form-row">
+        <input type="file" class="butn" id="uploadExcel" accept=".xlsx,.xls,.csv" style="background-color: #3e3ea7;">
+      </div>
+    </form>
+</div>
+  <div class="card-body">
+
+    <input type="radio" id="w" checked="true" style="font-style: bold; font-size: 20px; color: #1A1A2E; font-family: sans-serif; margin-top: 3px;">
+    <label for="w" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Chart Details</label>
+    <div class="create-table" style="margin-bottom: 10px;">
+
+    <input type="text" name="chart-title" id="chart-title" placeholder="chart title">
+    <input type="text" name="chart-subtitle" id="chart-subtitle" placeholder="subtitile">
+    <input type="text" name="x-axis-name" id="x-axis-name" placeholder="x axis name">
+    <input type="text" name="y-axis-name" id="y-axis-name" placeholder="y axis name">
+    <!-- <input type="text" name="value-prefix" id="value-prefix" placeholder="value prefix"> -->
+    
+    </div>
+
+    <hr>
+
+    <input type="radio" id="w" checked="true" style="font-style: bold; font-size: 20px; color: #1A1A2E; font-family: sans-serif; margin-top: 3px;">
+    <label for="w" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Chart Entry</label>
+
+
+    <div class="table entry">
+      <input type="text" style="width: 25%;" name="series-name" id="series-name" placeholder="series name"> <br>
+      <input type="text" style="width: 20%;" name="label" id="label" placeholder="label">
+      <input type="text" style="width: 15%; margin-right: 70px;" name="value" id="value" placeholder="value" style="margin-right: 110px;">
+
+      <button class="butn" id="addSeriesButton" style="background-color: rgb(18, 182, 204); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">New Series</button>
+      <button class="butn" id="unDoButton" style="background-color: rgb(204, 18, 18); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Pop Entry</button>
+      <button class="butn" id="redoButton" style="background-color: rgb(13, 199, 13); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Undo Pop</button>
+      <button class="btno"><i class="fa fa-save"></i> Save</button>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="card shadow">
+  <div class="card-body">
+    <input type="radio" id="w" checked="true" style="font-style: bold; font-size: 20px; color: #1A1A2E; font-family: sans-serif; margin-top: 3px;">
+    <label for="w" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Chart</label>
+
+    <div class="row" style="margin-left: 50px; margin-right: 50px;" id="settingsDiv">
+      <div class="col-lg-4 col-md-6 col-sm-6">
+        <label class="switch switch-flat" id="switchToggle" >
+          <input class="switch-input" type="checkbox"/>
+          <span class="switch-label" data-on="3D-On" data-off="3D-Off"></span> 
+          <span class="switch-handle"></span>
+        </label>
+  
+      </div>
+  
+      <div class="col-lg-4 col-md-6 col-sm-6">
+        <label class="switch switch-flat" id="switchToggleMode" >
+          <input class="switch-input" type="checkbox"/>
+          <span class="switch-label" data-on="Dark Mod" data-off="Light Mod"></span> 
+          <span class="switch-handle"></span>
+        </label>
+  
+      </div>
+  
+  
+    </div>
+
+    <div class="one-chart-index">
+
+      <div id="chart-container" >here</div>
+   
+      </div>
+
+
+      <small>Click the box at the Top Right Corner of Chart to Download</small>
+
+  </div>
+
+
+
+</div>
+
+
+<div class="card shadow" style="margin-bottom: 50px;">
+  <div class="card-body">
+ <div class="container-fluid">
+     <input type="radio" id="w" checked="true" style="font-style: bold; font-size: 20px; color: #1A1A2E; font-family: sans-serif; margin-top: 3px;">
+ <label for="w">Similar Chart Suggestions</label>
+ 
+ 
+ 
+  <div class="row">
+ 
+ <div class="col-lg-3 col-md-6 col-sm-12 one-chart">
+    <div id="column-chart"  class="chart-area ml-1 mr-1"></div>
+
+    <div>  Column Chart </div>
+ 
+    <div class="actions" >
+      <button  id="view-column" class="btno"><i class="fa fa-window-maximize"> view</i></button>
+ 
+    </div>
+ 
+    </div>
+ 
+    <div class="col-lg-3 col-md-6 col-sm-12 one-chart">
+     <div id="stacked-column" class="chart-area ml-1 mr-1"></div>
+     <div>  Stacked Column </div>
+     <div class="actions" >
+  
+      <button id="view-stacked-column" class="btno"><i class="fa fa-window-maximize"> view</i></button>
+  
+     </div>
+  
+     </div>
+ 
+     <div class="col-lg-3 col-md-6 col-sm-12 one-chart">
+         <div id="bar-chart" class="chart-area ml-1 mr-1"></div>
+         <div>  Bar Chart </div>
+         <div class="actions" >
+      
+          <button id="view-bar" class="btno"><i class="fa fa-window-maximize"> view</i></button>
+      
+         </div>
+      
+         </div>
+ 
+
+ 
+     <div class="col-lg-3 col-md-6 col-sm-12 one-chart">
+        <div id="stacked-bar" class="chart-area ml-1 mr-1"></div>
+        <div>  Stacked Bar </div>
+        <div class="actions" >
+     
+          <button id="view-stacked-bar" class="btno"><i class="fa fa-window-maximize"> view</i></button>
+
+        </div>
+     
+        </div>
+     
+     
+     
+     </div>
+
+ 
+  </div>
+ 
+     </div>
+     </div>
+
+</main>
+
+
+  
+  
+  </div>
+
+
+
+</body>
+
+<script type="text/javascript" src="js/chartify-column.js"></script>
+
+
+<script>
+    jQuery(function ($) {
+
+$(".sidebar-dropdown > a").click(function() {
+$(".sidebar-submenu").slideUp(200);
+if (
+$(this)
+  .parent()
+  .hasClass("active")
+) {
+$(".sidebar-dropdown").removeClass("active");
+$(this)
+  .parent()
+  .removeClass("active");
+} else {
+$(".sidebar-dropdown").removeClass("active");
+$(this)
+  .next(".sidebar-submenu")
+  .slideDown(200);
+$(this)
+  .parent()
+  .addClass("active");
+}
+});
+
+$("#close-sidebar").click(function() {
+$(".page-wrapper").removeClass("toggled");
+});
+$("#show-sidebar").click(function() {
+$(".page-wrapper").addClass("toggled");
+});});
+</script>
+</html>

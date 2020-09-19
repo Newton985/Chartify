@@ -1,0 +1,251 @@
+<!DOCTYPE html />
+<html>
+<head>
+
+    <meta type="author" name="newton karani">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidenav.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Step 1 - Include the fusioncharts core library -->
+    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+    <!-- Step 2 - Include the fusion theme -->
+    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.candy.js"></script>
+
+
+
+<title>Table to charts</title>
+</head>
+<body style="margin-left: 20px; margin-right: 40px;">
+
+  
+<!--side menu-->
+<div class="page-wrapper chiller-theme toggled">
+    <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav id="sidebar" class="sidebar-wrapper">
+      <div class="sidebar-content">
+        <div class="sidebar-brand">
+          <a style="color: beige;" href="#">Select Chart Type</a>
+          <div id="close-sidebar">
+            <i class="fa fa-times"></i>
+          </div>
+        </div>
+        <!-- <div class="sidebar-search" style="background-color: beige;">
+          <div>
+            <div class="input-group" style="background-color: beige;">
+              <input type="text" class="form-control search-menu" placeholder="Search..." style="background-color: beige; border: 1px solid #23408f;">
+              <div class="input-group-append">
+                <span class="input-group-text">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div> -->
+  
+        <!-- sidebar-search  -->
+        <div class="sidebar-menu">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <a href="index.html">
+                <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                <span>Bar</span>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a class="active-link" href="pie.html">
+                <i class="fa fa-pie-chart"></i>
+                <span>Pie</span>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="doughnut.html">
+                <i class="fa fa-pie-chart"></i>
+                <span>Doughnut</span>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="line.html">
+                <i class="fa fa-line-chart"></i>
+                <span>Line</span>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="area.html">
+                <i class="fa fa-area-chart"></i>
+                <span>Area</span>
+              </a>
+            </li>
+    
+            <li class="list-group-item">
+              <a href="column.html">
+                <i class="fa fa-bar-chart"></i>
+                <span>Column</span>
+              </a>
+            </li>
+
+            <li class="list-group-item">
+              <a href="bubble.html">
+                <i class="fa fa-spinner"></i>
+                <span>Bubble</span>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="candlestick.html">
+                <i class="fa fa-folder"></i>
+                <span>CandleStick</span>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="combined.html">
+                <i class="fa fa-folder"></i>
+                <span>Combined</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- sidebar-menu  -->
+      </div>
+      <!-- sidebar-content  -->
+    </nav>
+    <!-- sidebar-wrapper  -->
+  
+  
+  
+  
+    <main class="page-content" style="padding-right: 10px;">
+      <div class="container-fluid">
+  
+<div class="card shadow options collapse" id="optionsCollapse" style="min-width: 200px;">
+    <div class="card-header">Account</div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Sign In / Sign Up</li>
+        <li class="list-group-item">My Tables</li>
+        <li class="list-group-item">Log Out</li>
+      </ul>
+</div>
+
+    
+<div class="container">
+    <nav class="navbar navbar-expand-md fixed-top d-flex justify-content-between flex-row">
+        <a href="#" class="navbar-brand logo">Chartify</a>  
+
+        <a href="index.html" class="navbar-brand active-link">Create Chart</a>  
+
+        <a href="table2charts.html" class="navbar-brand logo">Table 2 Charts</a>  
+        
+        <a data-toggle="collapse" role="button" href="#optionsCollapse"><img src="images/image9.jpeg" class="rounded-circle" alt="profile"></a>
+    </nav>
+</div>
+</div>
+
+<div class="card shadow">
+  <div class="card-body">
+
+    <input type="radio" id="w" checked="true" style="font-style: bold; font-size: 20px; color: #1A1A2E; font-family: sans-serif; margin-top: 3px;">
+    <label for="w">Chart Details</label>
+    <div class="create-table" style="margin-bottom: 10px;">
+    <input type="text" name="table-name" id="table-name" placeholder="chart name">
+    <input type="text" name="x-values" id="x-values-text" placeholder="x axis title">
+    <input type="text" name="y-values" id="y-values-text" placeholder="y axis title">
+    </div>
+
+    <hr>
+
+    <input type="radio" id="w" checked="true" style="font-style: bold; font-size: 20px; color: #1A1A2E; font-family: sans-serif; margin-top: 3px;">
+    <label for="w">Chart Entry</label>
+    <div class="table entry">
+      <input type="text" name="point-name" id="point-name" placeholder="point name">
+      <input type="text" name="x-axis" id="x-axis" placeholder="x axis">
+      <input type="text" name="y-axis" id="y-axis" placeholder="y axis">
+
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="card shadow" style="margin-bottom: 50px;">
+  <div class="card-body">
+
+    <div class="one-chart-index">
+
+      <div id="chart-container" >here</div>
+   
+      <div class="actions d-flex justify-content-between flex-row ml-1 mr-1" >
+   
+       <div class="one-icon">
+           <img src="images/share.png" alt="share">
+       </div>
+   
+       <div class="one-icon">
+           <img src="images/view.png" alt="share">
+       </div>
+   
+       <div class="one-icon">
+           <img src="images/download.png" alt="share">
+       </div>
+   
+      </div>
+   
+      </div>
+
+  </div>
+
+</div>
+
+</main>
+
+
+  
+  
+  </div>
+
+
+
+</body>
+
+<script type="text/javascript" src="js/chartify.js"></script>
+
+
+<script>
+    jQuery(function ($) {
+
+$(".sidebar-dropdown > a").click(function() {
+$(".sidebar-submenu").slideUp(200);
+if (
+$(this)
+  .parent()
+  .hasClass("active")
+) {
+$(".sidebar-dropdown").removeClass("active");
+$(this)
+  .parent()
+  .removeClass("active");
+} else {
+$(".sidebar-dropdown").removeClass("active");
+$(this)
+  .next(".sidebar-submenu")
+  .slideDown(200);
+$(this)
+  .parent()
+  .addClass("active");
+}
+});
+
+$("#close-sidebar").click(function() {
+$(".page-wrapper").removeClass("toggled");
+});
+$("#show-sidebar").click(function() {
+$(".page-wrapper").addClass("toggled");
+});});
+</script>
+</html>

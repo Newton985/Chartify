@@ -1,0 +1,1 @@
+chartType="msbar2d";

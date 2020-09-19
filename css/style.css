@@ -1,0 +1,384 @@
+body{
+    background-color: #f7f7f7;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+table{
+    margin-left: 5px;
+    border-collapse: collapse;
+    width: max-content;
+
+}
+
+table,th,td{
+  border: 2px solid #23408f;
+}
+
+table th, table td{
+  padding: 1px;
+}
+
+th,td{
+    padding: 0;
+    margin: 0;
+}
+
+thead{
+  background-color: #23408f;
+  color: #ffffff;
+}
+
+
+
+
+.navbar{
+    background-color:#23408f;
+    color: #ffffff;
+
+}
+
+.mycontainer{
+    background-color: #ffffff;
+    /* border: 0.1px solid #16213e; */
+    margin-top: 10px;
+    box-shadow: #16213e;
+    border-radius: 5px;
+    margin-bottom: 10px;
+        
+}
+
+.active-link{
+
+  background-color: rgb(44, 44, 187);
+  padding: 5px;
+  color: #ecf0f1;
+
+}
+
+.active-link span{
+  color: #ecf0f1;
+}
+
+.options{
+  z-index: 9;
+  float: right;;
+  margin-top: 0px;
+  margin-right: 20px;
+  position: absolute;
+  right: 0;
+}
+
+.list-group-item:hover{
+  background-color: #254fc5;
+  color: #ffffff;
+  align-content: center;
+}
+
+.card{
+    margin-top: 7px;
+}
+
+
+
+.btno {
+  background-color: #254fc5;
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 5px 5px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  margin-right: 40px;
+  
+  
+}
+
+/* Darker background on mouse-over */
+.btno:hover {
+  background-color: RoyalBlue;
+}
+
+
+    .butn {
+        
+        margin: 5px;
+        padding: 5px;
+        overflow: hidden;
+        border-width: 0;
+        outline: none;
+        border-radius: 2px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+        
+        background-color: #254fc5;
+        color: #ecf0f1;
+        
+        transition: background-color .3s;
+      }
+      
+      .butn:hover{
+        background-color: #27ae60;
+      }
+      
+      
+      .butn span {
+        padding: 12px 24px;
+      }
+      
+      .butn:before {
+        content: "";
+        top: 50%;
+        left: 50%;
+        width: 0;
+        padding-top: 0;
+          
+        border-radius: 100%;
+        
+        background-color: rgba(236, 240, 241, .3);
+        
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+      
+      .butn:active:before {
+        width: 120%;
+        padding-top: 120%;
+        
+        transition: width .2s ease-out, padding-top .2s ease-out;
+      }
+
+      .one-chart{
+          background-color: #f7f7f7;
+          border: 2px solid white;
+
+      }
+
+      .one-chart img{
+          margin-top: 3px;
+          height: 150px;
+      }
+
+      .chart-area{
+        background-color: #f7f7f7;
+          width: 100%;
+
+      }
+
+      .actions{
+          background-color: #f7f7f7;
+          padding-left: 30px;
+          padding-right: 30px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          
+          
+      }
+
+      .one-icon img{
+          max-width: 60px;
+          height: 30px;
+          padding: 5px;
+          margin-right: 50px;
+    
+      }
+
+
+      .rounded-circle{
+        height: 30px;
+        width: 30px;
+        align-self: flex-end;
+      }
+
+
+      .create-table input{
+        width: 23%;
+      }
+
+      /*style for index*/
+
+      .one-chart-index{
+        width: 100%;
+      
+      }
+
+      .chart-area-index{
+        width: 100%;
+      }
+
+
+
+      /*switch code*/
+      .switch {
+        position: relative;
+        display: block;
+        /* vertical-align: top; */
+        width: 100px;
+        height: 30px;
+        padding: 3px;
+        margin: 0 10px 10px 0;
+        background: linear-gradient(to bottom, #eeeeee, #FFFFFF 25px);
+        background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF 25px);
+        border-radius: 18px;
+        box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);
+        cursor: pointer;
+        box-sizing:content-box;
+      }
+      .switch-input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        box-sizing:content-box;
+      }
+      .switch-label {
+        position: relative;
+        display: block;
+        height: inherit;
+        font-size: 10px;
+        text-transform: uppercase;
+        background: #eceeef;
+        border-radius: inherit;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+        box-sizing:content-box;
+      }
+      .switch-label:before, .switch-label:after {
+        position: absolute;
+        top: 50%;
+        margin-top: -.5em;
+        line-height: 1;
+        -webkit-transition: inherit;
+        -moz-transition: inherit;
+        -o-transition: inherit;
+        transition: inherit;
+        box-sizing:content-box;
+      }
+      .switch-label:before {
+        content: attr(data-off);
+        right: 11px;
+        color: #aaaaaa;
+        text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+      }
+      .switch-label:after {
+        content: attr(data-on);
+        left: 11px;
+        color: #FFFFFF;
+        text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+      }
+      .switch-input:checked ~ .switch-label {
+        background: #E1B42B;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
+      }
+      .switch-input:checked ~ .switch-label:before {
+        opacity: 0;
+      }
+      .switch-input:checked ~ .switch-label:after {
+        opacity: 1;
+      }
+      .switch-handle {
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 28px;
+        height: 28px;
+        background: linear-gradient(to bottom, #FFFFFF 40%, #f0f0f0);
+        background-image: -webkit-linear-gradient(top, #FFFFFF 40%, #f0f0f0);
+        border-radius: 100%;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+      }
+      .switch-handle:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -6px 0 0 -6px;
+        width: 12px;
+        height: 12px;
+        background: linear-gradient(to bottom, #eeeeee, #FFFFFF);
+        background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF);
+        border-radius: 6px;
+        box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+      }
+      .switch-input:checked ~ .switch-handle {
+        left: 74px;
+        box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+      }
+       
+      /* Transition
+      ========================== */
+      .switch-label, .switch-handle {
+        transition: All 0.3s ease;
+        -webkit-transition: All 0.3s ease;
+        -moz-transition: All 0.3s ease;
+        -o-transition: All 0.3s ease;
+      }
+
+      .switch-flat {
+        padding: 0;
+        background: #FFF;
+        background-image: none;
+      }
+      .switch-flat .switch-label {
+        background: #FFF;
+        border: solid 2px #acaaaa;
+        box-shadow: none;
+      }
+      .switch-flat .switch-label:after {
+        color: #0088cc;
+      }
+      .switch-flat .switch-handle {
+        top: 6px;
+        left: 6px;
+        background: #7e818f;
+        width: 22px;
+        height: 22px;
+        box-shadow: none;
+      }
+      .switch-flat .switch-handle:before {
+        background: #eceeef;
+      }
+      .switch-flat .switch-input:checked ~ .switch-label {
+        background: #FFF;
+        border-color: #0088cc;
+      }
+      .switch-flat .switch-input:checked ~ .switch-handle {
+        left: 72px;
+        background: #0088cc;
+        box-shadow: none;
+      }
+
+
+
+
+      /* style specific to sign in */
+
+      .formm{
+      margin: auto;
+       width: 400px;
+      }
+
+      .bodySignIn{
+        padding: 100px;
+      }
+
+      .card-Sign{
+        height: 400px;
+      }
+
+      .imageSign{
+        min-width: 100px;
+        background-color: #254fc5;
+      }
+      
+      .butn-sign{
+        width: 400px;
+      }
+
+      .my-signin2{
+        margin-top: 20px;
+      }
+      
+
+ 

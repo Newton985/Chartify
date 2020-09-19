@@ -1,0 +1,2 @@
+chartType="msline";
+createChart();

@@ -1,0 +1,2 @@
+chartType="msarea";
+createChart();

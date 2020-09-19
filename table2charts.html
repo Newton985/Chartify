@@ -1,0 +1,290 @@
+<!-- 1a1a2e
+16213e
+0f3460 -->
+<!DOCTYPE html />
+<html>
+<head>
+
+    <meta type="author" name="newton karani">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Step 1 - Include the fusioncharts core library -->
+    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+    <!-- Step 2 - Include the fusion theme -->
+    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.candy.js"></script>
+
+
+<title>Table to charts</title>
+</head>
+<body style="margin-left: 50px; margin-right: 50px;">
+
+
+<div class="card shadow options collapse" id="optionsCollapse" style="min-width: 200px;">
+    <div class="card-header">Account</div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Sign In / Sign Up</li>
+        <li class="list-group-item">My Tables</li>
+        <li class="list-group-item">Log Out</li>
+      </ul>
+</div>
+
+    
+<div class="container"">
+    <nav class="navbar navbar-expand-md fixed-top d-flex justify-content-between flex-row">
+        <a href="#" class="navbar-brand logo">Chartify</a>  
+
+        <a href="index.html" class="navbar-brand">Create Chart</a>  
+
+        <a href="table2charts.html" class="navbar-brand active-link">Table 2 Charts</a>   
+        
+        <a data-toggle="collapse" role="button" href="#optionsCollapse"><img src="images/image9.jpeg" class="rounded-circle" alt="profile"></a>
+    </nav>
+</div>
+
+    
+
+<div class="card shadow" style="margin-top: 63px;">
+<div class="card-body">
+<div class="container-fluid">
+
+    <div class="d-flex justify-content-center flex-row">
+        <button class="butn" style="background-color: green;">Import Excel</button>
+        <button class="butn" style="background-color: rgb(124, 124, 8);">Import Spreadsheet</button>
+    </div>
+
+    <input type="radio" id="w" checked="true" style="font-style: bold; font-size: 20px; color: #1A1A2E; font-family: sans-serif; margin-top: 3px;">
+<label for="w">New Table</label>
+<!-- 
+    <div class="row">
+        <form action="self" method="POST">
+            <input  type="text" name="table-name" id="table-name" placeholder="table name" class="input-table-name">
+            <button type="submit" class="add-name-button" >create</button>
+        </form>
+    </div> -->
+
+        <div class="row">
+        <div class="col-lg-12 d-flex align-items-end flex-column">
+        <button class="butn" onclick="addColumn">Add Column</button>
+        </div>
+        </div>
+
+        <div class="row ">
+         
+            <table class="table table-sm table-bordered table-responsive-md" id="table-create">
+
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>
+                            <input type="text" name="colum1-name" id="colum1-name" placeholder="column name">
+                        </th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>
+                            <input type="text" name="colum1-name" id="colum1-name" placeholder="row name">
+                        </td>
+
+                        <td><input type="text" name="colum1-name" id="colum1-name" placeholder="value"></td>
+
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div class="row">
+        <div class="col-lg-12">
+        <button class="butn" onclick="addRow">Add Row</button>
+        </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-12 d-flex justify-content-end flex-row">
+
+                <button style="background-color: darkorange;" class="butn" onclick="addColumn">Draw Charts</button>
+
+                <button style="background-color: crimson;" class="butn" onclick="addColumn">Save Table</button>
+
+                <button style="background-color: mediumvioletred;" class="butn" onclick="addColumn">Download Table</button>
+
+            </div>
+        </div>
+
+</div>
+</div>
+</div>
+
+<div class="card shadow">
+ <div class="card-body">
+<div class="container-fluid">
+    <input type="radio" id="w" checked="true" style="font-style: bold; font-size: 20px; color: #1A1A2E; font-family: sans-serif; margin-top: 3px;">
+<label for="w">Charts</label>
+
+
+
+ <div class="row">
+
+<div class="col-lg-4 col-md-6 col-sm-12 one-chart">
+   <img src="images/image1.jpeg" alt="chart" class="chart-area ml-1 mr-1">
+
+   <div class="actions d-flex justify-content-between flex-row ml-1 mr-1" >
+
+    <div class="one-icon">
+        <img src="images/share.png" alt="share">
+    </div>
+
+    <div class="one-icon">
+        <img src="images/view.png" alt="share">
+    </div>
+
+    <div class="one-icon">
+        <img src="images/download.png" alt="share">
+    </div>
+
+   </div>
+
+   </div>
+
+   <div class="col-lg-4 col-md-6 col-sm-12 one-chart">
+    <img src="images/image2.jpeg" alt="chart" class="chart-area ml-1 mr-1">
+ 
+    <div class="actions d-flex justify-content-between flex-row ml-1 mr-1" >
+ 
+     <div class="one-icon">
+         <img src="images/share.png" alt="share">
+     </div>
+ 
+     <div class="one-icon">
+         <img src="images/view.png" alt="share">
+     </div>
+ 
+     <div class="one-icon">
+         <img src="images/download.png" alt="share">
+     </div>
+ 
+    </div>
+ 
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12 one-chart">
+        <img src="images/image3.jpeg" alt="chart" class="chart-area ml-1 mr-1">
+     
+        <div class="actions d-flex justify-content-between flex-row ml-1 mr-1" >
+     
+         <div class="one-icon ">
+             <img src="images/share.png" alt="share">
+         </div>
+     
+         <div class="one-icon">
+             <img src="images/view.png" alt="share">
+         </div>
+     
+         <div class="one-icon">
+             <img src="images/download.png" alt="share">
+         </div>
+     
+        </div>
+     
+        </div>
+
+<!-- </div> -->
+
+
+
+
+<!-- <div class="row"> -->
+
+    <div class="col-lg-4 col-md-6 col-sm-12 one-chart">
+       <img src="images/image4.jpeg" alt="chart" class="chart-area ml-1 mr-1">
+    
+       <div class="actions d-flex justify-content-between flex-row ml-1 mr-1" >
+    
+        <div class="one-icon">
+            <img src="images/share.png" alt="share">
+        </div>
+    
+        <div class="one-icon">
+            <img src="images/view.png" alt="share">
+        </div>
+    
+        <div class="one-icon">
+            <img src="images/download.png" alt="share">
+        </div>
+    
+       </div>
+    
+       </div>
+    
+       <div class="col-lg-4 col-md-6 col-sm-12 one-chart">
+        <img src="images/image5.jpeg" alt="chart" class="chart-area ml-1 mr-1">
+     
+        <div class="actions d-flex justify-content-between flex-row ml-1 mr-1" >
+     
+         <div class="one-icon">
+             <img src="images/share.png" alt="share">
+         </div>
+     
+         <div class="one-icon">
+             <img src="images/view.png" alt="share">
+         </div>
+     
+         <div class="one-icon">
+             <img src="images/download.png" alt="share">
+         </div>
+     
+        </div>
+     
+        </div>
+    
+        <div class="col-lg-4 col-md-6 col-sm-12 one-chart">
+            <img src="images/image6.jpeg" alt="chart" class="chart-area ml-1 mr-1">
+         
+            <div class="actions d-flex justify-content-between flex-row ml-1 mr-1" >
+         
+             <div class="one-icon ">
+                 <img src="images/share.png" alt="share">
+             </div>
+         
+             <div class="one-icon">
+                 <img src="images/view.png" alt="share">
+             </div>
+         
+             <div class="one-icon">
+                 <img src="images/download.png" alt="share">
+             </div>
+         
+            </div>
+         
+            </div>
+    
+    </div>
+
+
+
+
+
+
+
+ </div>
+
+    </div>
+    </div>
+    </div>
+
+
+
+</body>
+</html>
